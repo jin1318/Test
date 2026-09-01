@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>봉사 및 기부 가이드 🌸</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&family=M+PLUS+Rounded+1c:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pk1:#ff6b9d; --pk2:#ff4081; --pk3:#ffb3ce; --pk4:#ffe0ed; --pk5:#fff0f6;
+  --dark:#3d1a2e; --card:rgba(255,255,255,0.9); --shadow:0 4px 20px rgba(255,107,157,0.18);
+  --sidebar-width: 260px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'M PLUS Rounded 1c','Noto Sans KR',sans-serif;
+  background:linear-gradient(145deg,#ffe4f0 0%,#ffd6e8 30%,#fce4ff 60%,#e8d5ff 100%);
+  color:var(--dark); min-height:100vh; display:flex;
+}
+
+/* ── 사이드바 ── */
+.sidebar {
+  width: var(--sidebar-width);
+  background: rgba(255, 240, 248, 0.98);
+  backdrop-filter: blur(12px);
+  border-right: 3px solid var(--pk3);
+  box-shadow: 2px 0 20px rgba(255, 107, 157, 0.15);
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  position: fixed; top: 0; bottom: 0; left: 0;
+  z-index: 100; overflow-y: auto;
+}
+.sidebar-logo {
+  font-size: 20px; font-weight: 900; color: var(--pk2);
+  margin-bottom: 24px; text-align: center;
+}
+.nav-group-title {
+  font-size: 14px; font-weight: 700; color: #a06080;
+  margin: 12px 0 6px 8px; display: flex; align-items: center; justify-content: space-between;
+}
+.submenu-list {
+  list-style: none; padding-left: 8px; margin-bottom: 12px;
+}
+.submenu-item {
+  padding: 10px 14px; margin: 4px 0; border-radius: 12px;
+  font-size: 15px; font-weight: 700; color: var(--dark);
+  cursor: pointer; transition: all 0.2s;
+}
+.submenu-item:hover, .submenu-item.active {
+  background: var(--pk2); color: #fff;
+  box-shadow: 0 4px 12px rgba(255, 64, 129, 0.3);
+}
+
+/* ── 메인 컨텐츠 영역 ── */
+.main-content {
+  margin-left: var(--sidebar-width);
+  flex: 1; padding: 40px; display: flex; flex-direction: column; align-items: center;
+}
+.content-section { display: none; width: 100%; max-width: 800px; }
+.content-section.active { display: block; }
+
+.section-title {
+  font-size: 28px; font-weight: 900; color: var(--pk2);
+  margin-bottom: 20px; text-align: center;
+}
+
+/* ── 가이드 이미지 세로 스크롤 컨테이너 ── */
+.guide-image-container {
+  display: flex; flex-direction: column; gap: 20px;
+  align-items: center; width: 100%;
+}
+.guide-image-container img {
+  width: 100%; height: auto; border-radius: 16px;
+  box-shadow: var(--shadow); border: 2px solid var(--pk3);
+}
+.placeholder-box {
+  width: 100%; background: var(--card); border-radius: 16px;
+  padding: 40px; text-align: center; font-size: 18px; font-weight: 700;
+  border: 2px dashed var(--pk3); color: #a06080;
+}
+</style>
+</head>
+<body>
+
+<!-- 사이드바 -->
+<aside class="sidebar">
+  <div class="sidebar-logo">🌸 나눔 플랫폼</div>
+  
+  <div class="nav-group-title">📋 전체보기 <span>▼</span></div>
+  <ul class="submenu-list">
+    <li class="submenu-item active" onclick="showMenu('volunteer', this)">자원봉사</li>
+    <li class="submenu-item" onclick="showMenu('kiosk', this)">나눔키오스크</li>
+    <li class="submenu-item" onclick="showMenu('regular', this)">정기기부</li>
+    <li class="submenu-item" onclick="showMenu('blood', this)">헌혈</li>
+    <li class="submenu-item" onclick="showMenu('sharing', this)">나눔메뉴</li>
+    <li class="submenu-item" onclick="showMenu('walk', this)">사랑의걷기</li>
+  </ul>
+</aside>
+
+<!-- 메인 콘텐츠 영역 -->
+<main class="main-content">
+
+  <!-- 자원봉사 메뉴 영역 -->
+  <section id="menu-volunteer" class="content-section active">
+    <h2 class="section-title">🤝 자원봉사 안내 가이드</h2>
+    <div class="guide-image-container">
+      <img src="Data/1.jpg" alt="자원봉사 가이드 1">
+      <img src="Data/2.png" alt="자원봉사 가이드 2">
+    </div>
+  </section>
+
+  <!-- 기타 메뉴 영역 -->
+  <section id="menu-kiosk" class="content-section">
+    <h2 class="section-title">🖥️ 나눔키오스크</h2>
+    <div class="placeholder-box">나눔키오스크 안내 내용이 들어갈 자리입니다.</div>
+  </section>
+
+  <section id="menu-regular" class="content-section">
+    <h2 class="section-title">💖 정기기부</h2>
+    <div class="placeholder-box">정기기부 안내 내용이 들어갈 자리입니다.</div>
+  </section>
+
+  <section id="menu-blood" class="content-section">
+    <h2 class="section-title">🩸 헌혈</h2>
+    <div class="placeholder-box">헌혈 안내 내용이 들어갈 자리입니다.</div>
+  </section>
+
+  <section id="menu-sharing" class="content-section">
+    <h2 class="section-title">🍲 나눔메뉴</h2>
+    <div class="placeholder-box">나눔메뉴 안내 내용이 들어갈 자리입니다.</div>
+  </section>
+
+  <section id="menu-walk" class="content-section">
+    <h2 class="section-title">👟 사랑의걷기</h2>
+    <div class="placeholder-box">사랑의걷기 안내 내용이 들어갈 자리입니다.</div>
+  </section>
+
+</main>
+
+<script>
+function showMenu(menuId, element) {
+  var sections = document.querySelectorAll('.content-section');
+  for (var i = 0; i < sections.length; i++) {
+    sections[i].classList.remove('active');
+  }
+
+  var items = document.querySelectorAll('.submenu-item');
+  for (var j = 0; j < items.length; j++) {
+    items[j].classList.remove('active');
+  }
+
+  var targetSection = document.getElementById('menu-' + menuId);
+  if (targetSection) {
+    targetSection.classList.add('active');
+  }
+
+  if (element) {
+    element.classList.add('active');
+  }
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
